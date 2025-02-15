@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Rigidbody2D rb;
+    
+    private bool grounded;
+    private bool jump = false;
+
+    [Header("Values")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpSpeed;
-    private bool jump = false;
-    private Rigidbody2D rb;
+
 
     private void Start()
     {
@@ -14,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             jump = true;
         }
@@ -22,9 +27,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        UpdateSpeed();
+    }
+
+    private void UpdateSpeed()
+    {
         Vector3 speed = transform.right * Input.GetAxis("Horizontal") * moveSpeed;
-        
-        if(jump)
+
+        if (jump)
         {
             jump = false;
             speed.y = jumpSpeed;
@@ -35,5 +45,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.linearVelocity = speed;
+    }
+
+    public void SetGrounded(bool status)
+    {
+        grounded = status;
     }
 }
