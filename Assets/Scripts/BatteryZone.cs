@@ -3,11 +3,11 @@ using UnityEngine;
 public class BatteryZone : MonoBehaviour
 {
     [SerializeField] private GameObject darkness;
-    private DoorOpener exitZone;
+    private DoorOpener doorOpener;
 
     private void Start()
     {
-        exitZone = FindFirstObjectByType<DoorOpener>();
+        doorOpener = FindFirstObjectByType<DoorOpener>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,7 +17,7 @@ public class BatteryZone : MonoBehaviour
             //DEACTIVATE BATTERY SPRITE
             //ACTIVATE PARTICLE EFFECT OF PICKUP
             darkness.SetActive(true);
-            exitZone.playerBattery = true;
+            doorOpener.playerBattery = true;
         }
     }
 }

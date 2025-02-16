@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitDoor : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class ExitDoor : MonoBehaviour
     public void Open()
     {
         //SWITCH SPRITE TO OPEN DOOR
+        open = true;
 
     }
 
@@ -14,7 +16,7 @@ public class ExitDoor : MonoBehaviour
     {
         if(collision.GetComponentInParent<PlayerMovement>() != null && open)
         {
-            //COMPLETE LEVEL
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
