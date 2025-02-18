@@ -11,18 +11,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpSpeed;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
+    private float moveDirection;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            jump = true;
-        }
+        ReceiveInput();
+        CheckForJump();
+        UpdateSprite();
     }
 
     private void FixedUpdate()
@@ -30,9 +36,37 @@ public class PlayerMovement : MonoBehaviour
         UpdateSpeed();
     }
 
+    private void ReceiveInput()
+    {
+        moveDirection = Input.GetAxis("Horizontal");
+    }
+
+    private void CheckForJump()
+    {
+        if (Input.GetKey(KeyCode.Space) && grounded)
+        {
+            jump = true;
+        }
+    }
+
+    private void UpdateSprite()
+    {
+        animator.SetFloat("moveDirection", moveDirection);
+        animator.SetBool("jump", jump);
+
+        if (moveDirection > 0 && spriteRenderer.flipX)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(moveDirection < 0 && !spriteRenderer.flipX)
+        {
+            spriteRenderer.flipX = true;
+        }
+    }
+
     private void UpdateSpeed()
     {
-        Vector3 speed = transform.right * Input.GetAxis("Horizontal") * moveSpeed;
+        Vector3 speed = transform.right * moveDirection * moveSpeed;
 
         if (jump)
         {

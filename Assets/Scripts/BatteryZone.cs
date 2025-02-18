@@ -3,21 +3,23 @@ using UnityEngine;
 public class BatteryZone : MonoBehaviour
 {
     [SerializeField] private GameObject darkness;
-    private DoorOpener doorOpener;
+    private ExitDoor exitDoor;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        doorOpener = FindFirstObjectByType<DoorOpener>();
+        exitDoor = FindFirstObjectByType<ExitDoor>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponentInParent<PlayerMovement>() != null)
         {
-            //DEACTIVATE BATTERY SPRITE
-            //ACTIVATE PARTICLE EFFECT OF PICKUP
+            spriteRenderer.enabled = false;
             darkness.SetActive(true);
-            doorOpener.playerBattery = true;
+            exitDoor.Open();
+            Destroy(this);
         }
     }
 }
