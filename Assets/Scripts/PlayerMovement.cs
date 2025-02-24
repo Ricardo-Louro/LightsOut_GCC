@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (jump)
         {
             jump = false;
-            speed.y = jumpSpeed;
+            speed.y = Mathf.Max(jumpSpeed, rb.linearVelocity.y);
         }
         else
         {
@@ -84,5 +84,12 @@ public class PlayerMovement : MonoBehaviour
     public void SetGrounded(bool status)
     {
         grounded = status;
+    }
+
+    public void SetVerticalSpeed(float value)
+    {
+        Vector3 speed = rb.linearVelocity;
+        speed.y = value;
+        rb.linearVelocity = speed;
     }
 }
