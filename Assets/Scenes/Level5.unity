@@ -12989,33 +12989,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1066537960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9040468104086639972, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-  m_PrefabInstance: {fileID: 4941274296363873444}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1066537963
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066537960}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b08b6c73c13bb8e49a9642c9ecf34403, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1104182346
 GameObject:
   m_ObjectHideFlags: 0
@@ -13960,22 +13933,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumpPad
       objectReference: {fileID: 0}
-    - target: {fileID: 7499024770888383622, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-      propertyPath: speed
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563606242471716387, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563606242471716387, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7563606242471716387, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7563606242471716387, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.069
@@ -14019,10 +13976,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 9040468104086639972, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1066537963}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6155061ce7170fd4bb928ee7b3cdd0bc, type: 3}
 --- !u!1001 &8774072426885939257
 PrefabInstance:
@@ -14054,7 +14008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.004819277
+      value: 0.006060606
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -14062,7 +14016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9879518
+      value: 0.98821545
       objectReference: {fileID: 0}
     - target: {fileID: 5158878206259721287, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_LocalPosition.x
