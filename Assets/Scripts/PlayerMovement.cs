@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float moveDirection;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     private void Start()
     {
