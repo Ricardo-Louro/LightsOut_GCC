@@ -1,11 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    
+
     private bool grounded;
     private bool jump = false;
+
+    [Header("Sounds")]
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip deathClip;
 
     [Header("Values")]
     [SerializeField] private float moveSpeed;
@@ -13,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
+    private RetryLevel retryLevel;
 
     private float moveDirection;
 
@@ -27,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        retryLevel = GetComponent<RetryLevel>();
     }
 
     private void Update()
@@ -75,6 +84,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (jump)
         {
+            audioSource.pitch = Random.Range(0.7f, 1f);
+            audioSource.PlayOneShot(jumpClip);
+
             jump = false;
             speed.y = Mathf.Max(jumpSpeed, rb.linearVelocity.y);
         }
@@ -96,5 +108,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 speed = rb.linearVelocity;
         speed.y = value;
         rb.linearVelocity = speed;
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("die");
+        audioSource.PlayOneShot(deathClip);
+        retryLevel.DelayRestart(2.5f);
+        Destroy(rb);
+        Destroy(this);
     }
 }

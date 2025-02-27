@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class KillOnTouch : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponentInParent<PlayerMovement>() != null)
+        PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
+        if(playerMovement != null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            playerMovement.Die();
         }
     }
 }

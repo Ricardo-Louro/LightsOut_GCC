@@ -7,7 +7,34 @@ public class RetryLevel : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            RestartLevel();
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.F1))
+        {
+            NextLevel();
+        }
+    }
+
+    public void RestartLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void DelayRestart(float delay)
+    {
+        Invoke("RestartLevel", delay);
+    }
+
+    public void NextLevel()
+    {
+        try
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        catch
+        {
         }
     }
 }
