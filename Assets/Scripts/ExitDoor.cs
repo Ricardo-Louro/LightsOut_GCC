@@ -7,6 +7,8 @@ public class ExitDoor : MonoBehaviour
     [SerializeField] private GameObject closedDoorSprite;
     [SerializeField] private GameObject openDoorSprite;
 
+    [SerializeField] private GameObject transition;
+
     public void Open()
     {
         closedDoorSprite.SetActive(false);
@@ -18,7 +20,14 @@ public class ExitDoor : MonoBehaviour
     {
         if(collision.GetComponentInParent<PlayerMovement>() != null && open)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Destroy(collision.GetComponentInParent<PlayerMovement>());
+            transition.SetActive(true);
+            Invoke("NextLevel", 1.5f);
         }
+    }
+
+    private void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
