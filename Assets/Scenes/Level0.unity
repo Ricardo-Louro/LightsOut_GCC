@@ -13516,7 +13516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.0056497175
+      value: 0.0056338026
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -13524,7 +13524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4580374772320212643, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.98713124
+      value: 0.98748046
       objectReference: {fileID: 0}
     - target: {fileID: 5158878206259721287, guid: 96dd339605d158446b6deeb2c35bde8c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14040,7 +14040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -47, y: -39}
+  m_AnchoredPosition: {x: -47, y: -41.6}
   m_SizeDelta: {x: 600, y: 81.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6625246086398276065
@@ -14123,7 +14123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: w and a to move
+  m_text: a and d to move
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f57149ae7122ae4e9860b98604ab021, type: 2}
   m_sharedMaterial: {fileID: -4988764433767193993, guid: 5f57149ae7122ae4e9860b98604ab021, type: 2}
@@ -14150,8 +14150,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,8 +34,9 @@ public class RetryLevel : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-        catch
+        catch (Exception e)
         {
+            SceneManager.LoadScene(0);
         }
     }
 }
