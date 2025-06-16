@@ -1,0 +1,10 @@
+Visual Assets:
+	https://kenney.nl/assets/1-bit-platformer-pack
+
+
+Audio Assets:
+	Music: https://soundcloud.com/tokiwave/first-rain-lofi
+	Death Sound: https://pixabay.com/sound-effects/videogame-death-sound-43894/
+	Battery Pickup: https://pixabay.com/sound-effects/8bit-sounds-79328/
+	Success Sound: https://pixabay.com/sound-effects/arcade-collection-333342/
+	Jump Sound: https://creatorassets.com/a/8-bit-jump-sound-effects

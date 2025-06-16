@@ -18,7 +18,6 @@ public class BatteryZone : MonoBehaviour
     {
         if(collision.GetComponentInParent<PlayerMovement>() != null)
         {
-            audioSource.pitch = .7f;
             audioSource.Play();
             spriteRenderer.enabled = false;
             darkness.SetActive(true);
