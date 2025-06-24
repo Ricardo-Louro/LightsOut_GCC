@@ -82,13 +82,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 speed = transform.right * moveDirection * moveSpeed;
 
-        if (jump)
+        if(jump)
         {
             audioSource.pitch = Random.Range(0.7f, 1f);
             audioSource.PlayOneShot(jumpClip);
 
             jump = false;
             speed.y = Mathf.Max(jumpSpeed, rb.linearVelocity.y);
+            SetGrounded(false);
         }
         else
         {

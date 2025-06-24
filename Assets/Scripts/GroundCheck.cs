@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GroundCheck : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        StartCoroutine(SetGroundedOff(.1f));
+    }
+
+    private IEnumerator SetGroundedOff(float coyoteTime)
+    {
+        yield return new WaitForSeconds(coyoteTime);
         playerMovement.SetGrounded(false);
     }
 }
