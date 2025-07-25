@@ -10,11 +10,6 @@ public class RetryLevel : MonoBehaviour
         {
             RestartLevel();
         }
-
-        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.F1))
-        {
-            NextLevel();
-        }
     }
 
     public void RestartLevel()

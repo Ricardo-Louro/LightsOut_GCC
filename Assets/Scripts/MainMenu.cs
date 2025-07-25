@@ -12,7 +12,9 @@ public class MainMenu : MonoBehaviour
     private float timeStarted;
 
     private void Start()
-    {
+    {     
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         timeStarted = Time.time;
     }
 
