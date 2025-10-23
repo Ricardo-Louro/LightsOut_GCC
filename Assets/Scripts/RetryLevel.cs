@@ -4,9 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class RetryLevel : MonoBehaviour
 {
+    private PauseGame pauseGame;
+
+    private void Start()
+    {
+        pauseGame = FindFirstObjectByType<PauseGame>();
+    }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) && !pauseGame.paused)
         {
             RestartLevel();
         }

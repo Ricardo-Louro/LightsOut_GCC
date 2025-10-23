@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private PauseGame pauseGame;
+
     private Rigidbody2D rb;
 
     private bool grounded;
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        pauseGame = FindAnyObjectByType<PauseGame>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -97,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.linearVelocity = speed;
+
+        if(pauseGame.paused)
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
     }
 
     public void SetGrounded(bool status)
@@ -118,5 +126,15 @@ public class PlayerMovement : MonoBehaviour
         retryLevel.DelayRestart(2.5f);
         Destroy(rb);
         Destroy(this);
+    }
+
+    public Vector3 StoreVelocity()
+    {
+        return rb.linearVelocity;
+    }
+
+    public void SetVelocity(Vector3 playerVelocity)
+    {
+        rb.linearVelocity = playerVelocity;
     }
 }
